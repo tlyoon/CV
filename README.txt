@@ -8,7 +8,7 @@ main/ --
 	   |--dataset1/
 	   |--dataset2/
 	   
-2. The directories dataset1/ and dataset2/ contains sample raw data of 5 classes of herbal type. 
+2. The directories dataset1/ and dataset2/ contains sample raw data of 5 classes of herbal type. Download dataset1/ and dataset2/ seperately from https://staffusm-my.sharepoint.com/:f:/g/personal/tlyoon_usm_my/Ej3EcxTvnZBLt2rqW-HhboUBoGoEjd2WRaCihvfDveRWcw?e=iDrEh2 and https://staffusm-my.sharepoint.com/:f:/g/personal/tlyoon_usm_my/Ej3EcxTvnZBLt2rqW-HhboUBoGoEjd2WRaCihvfDveRWcw?e=iDrEh2.
 
 3. The package is devided into two independent parts: (i) Generation of 2D FTIR fingerprints and (ii) Implementation of the CV package using the fingerprints.
 
