@@ -1,4 +1,3 @@
-# CV
 "Collective Voting" Classification Scheme for 2D FTIR herbal fingerprints
 =========================================================================
 
@@ -114,10 +113,12 @@ main/ --
 					|-- ...
 			
 
-1. Prepare the data in training/ and inference/ manually. We shall demonstrate how this can be done using the *.npy data in dataset1/ or dataset2/. For example,
+1. Prepare the data in training/ and inference/ manually. We shall demonstrate how this can be done using the *.npy data in /main/dataset1/ or main/dataset2/. For example,
 
-cd training
-ln -s  ~/vote_production/dataset2/* .
+cd main/
+mkdir training/
+cd training/
+ln -s ../dataset2/* .
 
 [tlyoon@anicca training]$ ls
 GW/  JXL/  MT/  SY/  ZX/
@@ -133,13 +134,14 @@ This is the  multiplication factor for oversampling training data set. Final num
 
 The data in training/ will be later oversampled by data_preprocess_vote_v2.py in main.vote.py. 
 
-4. Prepare the data in inference/ manually.
+4. Prepare the data in /main/inference/ manually.
 
-5. To this end you may use the *.npy data in dataset1/ (or dataset2/ if you have already used dataset1 for training/ in step 2). For example,
+5. To this end you may use the *.npy data in /main/dataset1/ (or dataset2/ if you have already used dataset1 for training/ in step 2). For example,
 
-mkdir infernece
-cd inference
-ln -s  ~/vote_production/dataset1/* .
+cd main/
+mkdir inference/
+cd inference/
+ln -s  ../dataset1/* .
 
 [tlyoon@anicca inference]$ ls
 GW  JXL  MT  SY  ZX
@@ -149,8 +151,7 @@ G010/  G011/  G012/  G013/  G014/
 
 6. Edit the variable Nnofs in the file oversample.py, e.g., Nnofs=5. The number of oversamples in each class is defined as nofs=Nnofs*maxldf. Note that the number of original samples in each class in general is different. maxldf refers to the number of samples in the largest class.
 
-7. cd inference/
-   cp ../oversample.py .
+7. cp ../oversample.py .
    python oversample.py
 
 The *.npy files in the directories, e.g., GW/, JXL/, ..., will be oversampled accordingly and appear in the current directory, 
@@ -171,8 +172,4 @@ nohup python main_vote.py &
 12. Detailed procedure of what files are run can be inferred easily from main_vote.py. It includes running the folowing packages in tendem: 
 
 ln_train_data.py --> data_preprocess_vote_v2.py  -> training_1vA.py -> mvpng.py -> cvp.py
-
-
-
-
 
